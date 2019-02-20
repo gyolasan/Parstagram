@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://afternoon-atoll-70715.herokuapp.com/parse"
             }))
         
+        if PFUser.current() != nil {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feedController = main.instantiateViewController(withIdentifier: "FeedController")
+            window?.rootViewController = feedController
+            
+        }
+        
         return true
     }
 
